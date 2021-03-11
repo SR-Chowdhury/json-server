@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake REST API with JSON Server</title>
+</head>
+<body>
+
+    <h1>Bismillahir Rahmanir Rahim</h1>
+    <h2>Fake REST API with JSON Server</h2>
+
+    <p id="output"></p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+    <script >
+    
+        let data = [];
+
+        for (let i=0; i<10; i++) {
+            
+            let obj= {};
+            obj.id = i+1;
+            obj.name = faker.name.findName();
+            obj.email = faker.internet.email();
+            data.push(obj);
+
+        }
+
+        document.getElementById('output').innerHTML = JSON.stringify(data);
+
+    </script>
+</body>
+</html>
